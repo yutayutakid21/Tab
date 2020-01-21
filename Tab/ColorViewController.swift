@@ -10,12 +10,14 @@ import UIKit
 
 class ColorViewController: UIViewController {
 
-    var colorSelectString = ""
+    var colorSelect = UIColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
+        self.view.backgroundColor = colorSelect
+        
         // Do any additional setup after loading the view.
     }
     

@@ -23,7 +23,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var stationArray = ["渋谷","新宿","恵比寿"]
     
     // 選択されたセルを覚える変数
-    var chosenCell: Int!
+    var chosenCell = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,6 +54,10 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // 選択されたcellの番号を記憶
@@ -67,14 +71,14 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let colorVC:ColorViewController = segue.description as! ColorViewController
+        let colorVC:ColorViewController = segue.destination as! ColorViewController
         
-        if cosenCell == 1 {
-            colorVC.colorSelectString = "赤"
-        } else if cosenCell == 2 {
-            colorVC.colorSelectString = "青"
-        } else if cosenCell== 3 {
-            colorVC.colorSelectString = "黄色"
+        if chosenCell == 0 {
+            colorVC.colorSelect = .red
+        } else if chosenCell == 1 {
+            colorVC.colorSelect = .blue
+        } else if chosenCell == 2 {
+            colorVC.colorSelect = .yellow
         }
         
         

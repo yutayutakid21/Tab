@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
+class WebViewController: UIViewController {
 
     /*
      ・課題
@@ -17,9 +18,18 @@ class ViewController: UIViewController {
      
      */
     
+    var webview: WKWebView = WKWebView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        webview = WKWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        view.addSubview(webview)
+        
+        let request = URLRequest(url: URL(string: "https://www.google.com")!)
+        webview.load(request)
     }
 
 

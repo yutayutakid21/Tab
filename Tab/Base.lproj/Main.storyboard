@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="L4E-ec-RDM">
             <objects>
-                <viewController id="lv6-tf-Wq2" sceneMemberID="viewController">
+                <viewController id="lv6-tf-Wq2" customClass="TableViewController" customModule="Tab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="maj-5F-cwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

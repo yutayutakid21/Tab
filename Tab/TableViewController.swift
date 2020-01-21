@@ -8,10 +8,25 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    /*
+    ・課題
+    Tabbarを継承し、NavigationControllerを継承した画面を2つ作成し、画面AにWebView(Google)を画面Bに、駅の名前のラベルがついたセルを3つ持ったTableView、セルをタップするとshowで画面遷移し、画面遷移先の背景色を上から、赤、青、黄色で実装してください。
+    
+    
+    */
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var stationArray = ["渋谷","新宿","恵比寿"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }

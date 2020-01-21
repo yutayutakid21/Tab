@@ -22,6 +22,9 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var stationArray = ["渋谷","新宿","恵比寿"]
     
+    // 選択されたセルを覚える変数
+    var chosenCell: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +55,30 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
+        // 選択されたcellの番号を記憶
+        chosenCell = indexPath.row
+        
+        
+        
+        // 画面遷移の準備
+        performSegue(withIdentifier: "Next",sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let colorVC:ColorViewController = segue.description as! ColorViewController
+        
+        if cosenCell == 1 {
+            colorVC.colorSelectString = "赤"
+        } else if cosenCell == 2 {
+            colorVC.colorSelectString = "青"
+        } else if cosenCell== 3 {
+            colorVC.colorSelectString = "黄色"
+        }
+        
+        
+        
     }
 
     

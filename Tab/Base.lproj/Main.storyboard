@@ -62,17 +62,17 @@
                     <navigationItem key="navigationItem" id="WzZ-7O-umg"/>
                     <connections>
                         <outlet property="tableView" destination="LfI-xI-Afb" id="Mfs-BL-Q33"/>
-                        <segue destination="R9j-Rt-eCu" kind="show" id="jVQ-Gj-QGO"/>
+                        <segue destination="R9j-Rt-eCu" kind="show" identifier="Next" id="jVQ-Gj-QGO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpH-v8-sVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="865.84821428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Color View Controller-->
         <scene sceneID="qxx-Kj-N9Y">
             <objects>
-                <viewController id="R9j-Rt-eCu" sceneMemberID="viewController">
+                <viewController id="R9j-Rt-eCu" customClass="ColorViewController" customModule="Tab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9tI-5t-Oui">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
